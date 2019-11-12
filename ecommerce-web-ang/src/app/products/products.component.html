@@ -1,0 +1,44 @@
+<div  *ngIf="products">
+    <div><h3> {{ title }} </h3> </div>
+    <div *ngFor="let p of products._embedded.products">
+        <div class="col-md-6">
+
+            <div class="card">
+                <div class="card-header">{{ p.name  }}</div>
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <td rowspan="3">
+                                <img height="100" src="{{ catService.host+'/photoProduct/'+p.id}} " alt="">
+                                <button (click)="onEditPhoto(p)" >
+                                    <!--<span class="glyphicon glyphicon-edit"> </span>-->
+                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                </button>
+                                <p *ngIf="editPhoto == true && currentProduct == p" >
+                                    <input type="file" name="" (change)="onSelectedFile($event)" >
+                                    <button class="btn btn-success" (click)="uploadPhoto()" >Upload</button>
+                                    {{ progress }}
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>{{ p.description }} </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>{{ p.currentprice | number:'0.00' }} </td>
+                        </tr>
+                    </table>
+                </div> 
+                <div class="card-footer">Footer</div>
+            </div>    
+        </div>
+        
+    </div>
+
+</div>

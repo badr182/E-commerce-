@@ -1,0 +1,32 @@
+package org.sid.eco.web;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+import org.sid.eco.dao.ProductRepository;
+import org.sid.eco.entities.Product;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CatalogueRestController {
+	
+	private ProductRepository productRepository;
+
+	public CatalogueRestController(ProductRepository productRepository) {
+		this.productRepository = productRepository;
+	}
+	
+	// PathVariable
+	// produces = MediaType.IMAGE_JPEG_VALUE
+	@GetMapping(path = "/photoProduct/{id}") 
+	public byte[] getPhoto(@PathVariable("id") Long id ) throws Exception {
+		Product p = productRepository.findById(id).get();
+		// /home/galaxy/Documents/
+		//  Paths.get( "kk" ) 
+		return Files.readAllBytes( Paths.get("/home/galaxy/Documents/ecommerce_resource/"+p.getPhotoName()) );
+	}
+	
+}

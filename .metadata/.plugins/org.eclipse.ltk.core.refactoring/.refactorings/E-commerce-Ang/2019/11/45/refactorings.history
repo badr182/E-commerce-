@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;org.sid.eco.web.CatalogueController&apos; to &apos;CatalogueRestController&apos;&#x0A;- Original project: &apos;E-commerce-Ang&apos;&#x0A;- Original element: &apos;org.sid.eco.web.CatalogueController&apos;&#x0A;- Renamed element: &apos;org.sid.eco.web.CatalogueRestController&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;CatalogueController&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;org.sid.eco.web{CatalogueController.java[CatalogueController" matchStrategy="1" name="CatalogueRestController" qualified="false" references="true" similarDeclarations="false" stamp="1572810067055" textual="false" version="1.0"/>
+</session>
